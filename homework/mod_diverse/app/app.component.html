@@ -1,1 +1,9 @@
 <h1>Demo App</h1>
+<button (click)="currentValue = currentValue +1">Increment Value</button>
+<child-component [value]="currentValue"></child-component>
+
+<ol>
+    <li *ngFor="let message of messages">
+        {{ message }}
+    </li>
+</ol>
