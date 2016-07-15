@@ -9,13 +9,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-<<<<<<< HEAD
-var AppComponent = (function () {
-    function AppComponent() {
-    }
-    AppComponent.prototype.ngOnInit = function () {
-        console.log('AppComponent initialized');
-=======
 var child_component_1 = require('./child.component');
 var svc_messages_1 = require('./svc.messages');
 var AppComponent = (function () {
@@ -34,22 +27,15 @@ var AppComponent = (function () {
     };
     AppComponent.prototype.ngAfterViewInit = function () {
         this.messages.push('AfterViewInit');
->>>>>>> 36169d4bdf21375d0453c84387c3b1ad9272e945
     };
     AppComponent = __decorate([
         core_1.Component({
             selector: 'demo-app',
             templateUrl: 'app/app.component.html',
-<<<<<<< HEAD
-            directives: []
-        }), 
-        __metadata('design:paramtypes', [])
-=======
             providers: [svc_messages_1.MessageProvider],
             directives: [child_component_1.ChildComponent]
         }), 
         __metadata('design:paramtypes', [svc_messages_1.MessageProvider])
->>>>>>> 36169d4bdf21375d0453c84387c3b1ad9272e945
     ], AppComponent);
     return AppComponent;
 }());
