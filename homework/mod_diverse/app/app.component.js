@@ -11,12 +11,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require('@angular/core');
 var child_component_1 = require('./child.component');
 var svc_messages_1 = require('./svc.messages');
+var person_component_1 = require('./components/person.component');
+var messages_service_1 = require('./messages.service');
+var indicator_component_1 = require('./indicator.component');
 var AppComponent = (function () {
-    function AppComponent(_messageProvider) {
+    function AppComponent(_messageProvider, _messageService) {
         this._messageProvider = _messageProvider;
+        this._messageService = _messageService;
         this.currentValue = 3;
         this.messages = [];
+        this.items = [{ "firstName": "Lancaster", "lastName": "Jacobson", "department": "ZENSOR" }, { "firstName": "Elizabeth", "lastName": "Mcclure", "department": "SPLINX" }, { "firstName": "Marci", "lastName": "Bass", "department": "SPHERIX" }, { "firstName": "Cristina", "lastName": "Wooten", "department": "ENQUILITY" }, { "firstName": "Neal", "lastName": "Griffin", "department": "ZIORE" }, { "firstName": "Robles", "lastName": "Kane", "department": "AQUASURE" }, { "firstName": "Jo", "lastName": "Mcfarland", "department": "ENTHAZE" }, { "firstName": "Jaclyn", "lastName": "Rodriguez", "department": "ROTODYNE" }, { "firstName": "Marlene", "lastName": "Figueroa", "department": "WAAB" }, { "firstName": "Salas", "lastName": "Saunders", "department": "NORALEX" }];
         this.title = _messageProvider.getMessage();
+        this.appMessage = _messageService.getErrorMessage();
     }
     AppComponent.prototype.ngOnInit = function () {
         console.log('AppComponent initialized');
@@ -32,10 +38,10 @@ var AppComponent = (function () {
         core_1.Component({
             selector: 'demo-app',
             templateUrl: 'app/app.component.html',
-            providers: [svc_messages_1.MessageProvider],
-            directives: [child_component_1.ChildComponent]
+            providers: [svc_messages_1.MessageProvider, messages_service_1.MessageService],
+            directives: [child_component_1.ChildComponent, person_component_1.PersonComponent, indicator_component_1.IndicatorComponent]
         }), 
-        __metadata('design:paramtypes', [svc_messages_1.MessageProvider])
+        __metadata('design:paramtypes', [svc_messages_1.MessageProvider, messages_service_1.MessageService])
     ], AppComponent);
     return AppComponent;
 }());

@@ -9,21 +9,21 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var svc_roster_1 = require('./svc.roster');
-var ListComponent = (function () {
-    function ListComponent(_rosterService) {
-        this._rosterService = _rosterService;
-        this.students = _rosterService.getRoster();
+var messages_service_1 = require('./messages.service');
+var IndicatorComponent = (function () {
+    function IndicatorComponent(_messageService) {
+        this._messageService = _messageService;
+        this.indicatorMessage = _messageService.getSuccessMessage();
     }
-    ListComponent = __decorate([
+    IndicatorComponent = __decorate([
         core_1.Component({
-            selector: 'list-component',
-            templateUrl: 'app/list.component.html',
-            providers: [svc_roster_1.RosterService]
+            selector: 'indicator-component',
+            templateUrl: 'app/indicator.component.html',
+            providers: [messages_service_1.MessageService]
         }), 
-        __metadata('design:paramtypes', [svc_roster_1.RosterService])
-    ], ListComponent);
-    return ListComponent;
+        __metadata('design:paramtypes', [messages_service_1.MessageService])
+    ], IndicatorComponent);
+    return IndicatorComponent;
 }());
-exports.ListComponent = ListComponent;
-//# sourceMappingURL=list.component.js.map
+exports.IndicatorComponent = IndicatorComponent;
+//# sourceMappingURL=indicator.component.js.map

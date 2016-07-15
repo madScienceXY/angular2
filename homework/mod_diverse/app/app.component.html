@@ -9,3 +9,13 @@
 </ol>
 
 <h1>{{title}}</h1>
+
+<ul>
+    <li *ngFor = "let item of items">
+        <person-details [context]="item"></person-details>
+    </li>
+</ul>
+
+<h2>{{appMessage}}</h2>
+<hr />
+<indicator-component></indicator-component>

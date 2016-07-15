@@ -9,21 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var svc_roster_1 = require('./svc.roster');
-var ListComponent = (function () {
-    function ListComponent(_rosterService) {
-        this._rosterService = _rosterService;
-        this.students = _rosterService.getRoster();
+var MessageService = (function () {
+    function MessageService() {
     }
-    ListComponent = __decorate([
-        core_1.Component({
-            selector: 'list-component',
-            templateUrl: 'app/list.component.html',
-            providers: [svc_roster_1.RosterService]
-        }), 
-        __metadata('design:paramtypes', [svc_roster_1.RosterService])
-    ], ListComponent);
-    return ListComponent;
+    MessageService.prototype.getErrorMessage = function () {
+        return "Issue Occured";
+    };
+    MessageService.prototype.getSuccessMessage = function () {
+        return "Success";
+    };
+    MessageService = __decorate([
+        core_1.Injectable(), 
+        __metadata('design:paramtypes', [])
+    ], MessageService);
+    return MessageService;
 }());
-exports.ListComponent = ListComponent;
-//# sourceMappingURL=list.component.js.map
+exports.MessageService = MessageService;
+//# sourceMappingURL=messages.service.js.map

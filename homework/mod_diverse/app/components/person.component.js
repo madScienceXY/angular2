@@ -9,21 +9,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require('@angular/core');
-var svc_roster_1 = require('./svc.roster');
-var ListComponent = (function () {
-    function ListComponent(_rosterService) {
-        this._rosterService = _rosterService;
-        this.students = _rosterService.getRoster();
+var PersonComponent = (function () {
+    function PersonComponent() {
     }
-    ListComponent = __decorate([
+    __decorate([
+        core_1.Input(), 
+        __metadata('design:type', Object)
+    ], PersonComponent.prototype, "context", void 0);
+    PersonComponent = __decorate([
         core_1.Component({
-            selector: 'list-component',
-            templateUrl: 'app/list.component.html',
-            providers: [svc_roster_1.RosterService]
+            selector: 'person-details',
+            templateUrl: 'app/components/person.component.html',
+            directives: []
         }), 
-        __metadata('design:paramtypes', [svc_roster_1.RosterService])
-    ], ListComponent);
-    return ListComponent;
+        __metadata('design:paramtypes', [])
+    ], PersonComponent);
+    return PersonComponent;
 }());
-exports.ListComponent = ListComponent;
-//# sourceMappingURL=list.component.js.map
+exports.PersonComponent = PersonComponent;
+//# sourceMappingURL=person.component.js.map
